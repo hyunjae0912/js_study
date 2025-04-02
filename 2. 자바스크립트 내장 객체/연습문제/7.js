@@ -6,7 +6,7 @@ const students = [
     { name: "정민호", score: 54, gradeLevel: "1학년" },
     { name: "한서연", score: 63, gradeLevel: "2학년" },
     { name: "장동건", score: 71, gradeLevel: "3학년" },
-    { name: "오지호", score: 80, gradeLevel: "4학년" }
+    { name: "오지호", score: 80, gradeLevel: "3학년" }
 ];
 
 const change = students.map(function(student) {
@@ -19,6 +19,8 @@ const change = students.map(function(student) {
     }
 });
 
-change.filter((value) => value.grade == "B");
+console.log(change);
 
-console.log(change.filter((value) => value.grade == "B"));
+change.filter((value) => value.grade == "B" && value.gradeLevel == "1학년");
+
+console.log(change.filter((value) => value.grade == "B" && value.gradeLevel == "1학년"));
