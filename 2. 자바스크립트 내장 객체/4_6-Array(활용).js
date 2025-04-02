@@ -6,8 +6,17 @@ const arr = [10,15,20,25,30];
 
 const arrfilter1 = arr.filter((value) => value >= 20);
 
-const result = arrfilter1.map((valuSe) => value * 2);
+const result = arrfilter1.map((value) => value * 2);
 
 console.log(result);
 // arr.map((value) => value * 2)
 
+
+
+// 상품 가격에 형식 표시하기
+// 대충 숫자 뒤에 원 추가하기
+
+// sort
+// filter
+// map
+// reduce
