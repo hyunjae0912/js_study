@@ -1,5 +1,3 @@
-const { person } = require("./person");
-
 const calc1 = function (x, y) {
     return x - y;
 }
@@ -128,6 +126,14 @@ console.log(calc9(students));
 
 
 
+
+const person = [
+    {name : "둘리" , position : "부장", salart : 500},
+    {name : "철수" , position : "차장", salart : 380},
+    {name : "훈이" , position : "사원", salart : 260},
+    {name : "맹구" , position : "차장", salart : 420},
+    {name : "유리" , position : "사원", salart : 220}
+];
 
 const calc10 = function(person){
     let sum = 0;
