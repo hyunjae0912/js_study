@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    
+    <!-- this 키워드 -->
+
+    <button onclick="eventHandler();">조회</button>
+    <select onclick="eventHandler()">
+        <option value="1">A</option>
+        <option value="2">B</option>
+        <option value="3">C</option>
+    </select>
+
+    <script>
+
+        // this 키워드
+        // this는 window 객체를 가리킨다.
+        // 상황에 따라 this가 가리키는 대상이 달라진다.
+        console.log(this);
+
+        function func(){
+            console.log(this);
+        }
+        func();
+
+        // this는 button태그를 가리킨다.
+        // html 태그에서 이벤트가 발생하면 this는 이벤트가 발생된
+        // 요소를 가리킨다.
+        // 이벤트가 발생했을 때 수행되는 함수
+
+        // 이벤트 헨들러에서는 this가 이벤트가 발생된
+        // 요소를 가리킨다.
+        function eventHandler(obj){
+            console.log(obj);
+        }
+
+        // 객체 안에서 this 키워드
+        const person = {
+            firstName : '길동',
+            lastName : '홍',
+            getFullName: function(){
+                return this.lastName + this.firstName;
+            }
+        }
+
+    </script>
+</body>
+</html>

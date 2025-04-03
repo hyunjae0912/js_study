@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    
+
+    <script>
+        // 스코프 : 변수의 생명주기를 결정하는 범위
+
+        function func1(){
+            let localVar = '볼보';
+            // 이건 지역변수여서 함수 안에서만 사용이 가능하다.
+            console.log('함수내부에서 사용: ',localVar);
+        }
+        func1();
+        console.log('함수내부에서 사용: ',localVar);
+
+        function func2(){
+            
+        }
+    </script>
+</body>
+</html>
