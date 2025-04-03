@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        //alert(' alert창입니다. ');
+        // 이지선다가 가능함
+        // const result = confirm('정말 삭제하시겠습니까?');
+        // if(result){
+        //     console.log('"삭제"당했습니다.');
+        // }
+        // else{
+        //     console.log('살아나셨읍니다.');
+        // }
+
+        // 사용자가 문자열을 입력할 수 있는 창이 나타남
+        // const input = prompt('아이디를 입력하세요.');
+        // // 아무것도 없으면 공백이 반환됨
+        // console.log(input);
+
+        // if(input == null){
+        //     console.log('사용자가 취소버튼을 눌렀습니다.');
+        // }
+        // else if(input == ''){
+        //     console.log('사용자가 빈 값을 입력했습니다.');
+        // }
+        // else{
+        //     console.log('사용자가 값을 입력했습니다.');
+        // }
+
+        // 값 입력 + 확인 => 사용자가 입력한 데이터
+        // 확인만 => 공백문자
+        // 취소 => null (빈값)
+
+        // 다른 웹사이트가 열림
+        //open('https://naver.com', "_blank", 'width=800, height=600');
+
+        // 타이머 함수
+        // 일정 시간이 지난 후에 함수를 실행
+        // 매개변수 : 타이머 함수, 시간
+        // setTimeout(() => {
+        //     alert("5초가 지나서 이거 나오는거임 ㅇㅇ;;");
+        // },5000);
+
+        // 프로그램이 끝날때까지 계속 실행됨
+        let count = 0;
+
+        setInterval(() => {
+            console.log('타이머 실행');
+            count++;
+
+            if(count == 5){
+                count = 0;
+                console.log('프로그램 종료');
+                clearInterval(inter); //인터벌 종료
+            }
+        },5000);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

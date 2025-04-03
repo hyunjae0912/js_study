@@ -49,8 +49,13 @@ console.log()
 
 // 렌덤함수 : 그대로 사용하는 경우는 없고 결과값을 활용해서 특정 범위의 값을 구해야함
 console.log(Math.random());
+console.log();
 // 0부터 1까지 포함은 안됨
 let num =  Math.random();
 console.log(num);
+// 0부터 1까지 범위는 소숫점이니 일단 10을 곱해서 1의 자리를 얻음
 console.log(num*10);
+// 아래 소숫점을 전부 처내서 정리함 그리고 1을 더해서 범위가 1~10으로 변경됨
 console.log(Math.floor(num*10) + 1);
+
+console.log();
