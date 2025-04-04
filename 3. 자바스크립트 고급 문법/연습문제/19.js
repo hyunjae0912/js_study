@@ -14,5 +14,3 @@ copy.author.lastname = '김';
 
 console.log("원본 객체:", origin);
 console.log("복사된 객체:", copy);
-
-
