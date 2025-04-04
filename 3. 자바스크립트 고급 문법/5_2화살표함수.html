@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <button id = "btn1">버튼</button>
+    <button id = "btn2">버튼</button>
+    <script>
+
+        // document : html 문서를 가리키는 객체
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const btn1 = document.getElementById('btn1');
+            const btn2 = document.getElementById('btn2');
+
+            // 버튼을 클릭했을 때 이벤트 처리
+            btn1.onclick = function(){
+                console.log(this);
+                this.textContent = '바보멍청이';
+                // 버튼을 클릭했을 때 버튼이름 바꿀 수 있음
+            };
+
+            // 화살표함수의 this는 상위 스코프의 this (window 객체)
+            btn2.onclick = function(){
+                this.textContent = '누르지마!!';
+                console.log(this);
+            };
+        });
+
+    </script>
+</body>
+</html>

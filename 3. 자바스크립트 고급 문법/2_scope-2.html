@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+        let a = 1;
+        const func = function(){
+            let b = 2;
+            console.log(a); 
+            console.log(b); // 2
+        }
+
+        console.log(a);
+        func();
+
+        if(true){
+            let c = 3;
+            console.log(c); // 3
+            console.log(a); // 1
+        }
+        // console.log(c); // (c는 if문 안에 정의되어 있기 때문에 외부에서 접근할 수 없음)
+        // console.log(b); // (b는 func() 안에 정의되어 있기 때문에 외부에서 접근할 수 없음)
+
+
+        for(let i = 0; i < 3; i++){
+            // i는 지역변수, 반복문 안에서만 사용 가능
+            console.log(i); // 0, 1, 2, 3, 4
+        }
+        let j =0;
+        for(j = 0; j < 3; j++){
+            // i는 전역변수, 반복문 밖에서도 사용 가능
+            console.log(j); // 0, 1, 2, 3
+        }
+        console.log(j); // 3, for문이 끝난 후에도 j는 전역변수로 남아있음
+    </script>
+</body>
+</html>
