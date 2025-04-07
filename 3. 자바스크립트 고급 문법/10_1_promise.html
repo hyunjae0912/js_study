@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        const func = function(){
+            // 1. Pending: promise객체가 생성되고, 요청이 실행되면 초기 상태로 “pending” 상태가 된다
+            //2. Fulfilled: 요청이 성공적으로 끝나면 “fulfilled” 상태가 된다
+            //3. Rejected: 요청이 실패하면 “rejected” 상태가 된다
+            return new Promise((resoive, reject)=> {
+                resoive('success'); // resoive함수의 인자 : 작업에 성공한 후 받은 데이터
+            });
+        }
+
+        
+        // promise를 사용하여 작업이 끝난후에
+        // 남은 작업을 처리
+        // resoive가 호출됬으면 이어서 then함수가 호출됨
+        // promise의 상태: pedding, fulfilled
+        func().then((respone) => {
+            console.log(respone);
+        });
+    </script>
+</body>
+</html>

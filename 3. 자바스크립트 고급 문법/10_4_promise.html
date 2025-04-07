@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        function apiCall(){
+            const promise = new Promise((resolve, reject) => {
+                // promise 안에서 비동기 작업
+                const xhr = new XMLHttpRequest();
+                // api 호출
+                xhr.open("GET", "https://jsonplaceholder.typicode.com/posts/1");
+                // 진짜 호출
+                xhr.send();
+
+                // api 응답처리
+                // api응답이 들어오면 onload가 실행됨
+                xhr.onload = () => {
+                    if(xhr.status = 200){
+                        const res = JSON.parse(xhr.response);
+                        // 작업에 성공했으면 상태를 fulfuiled로 설정
+                        return res;
+                    }
+                    else {
+                        reject(xhr.status);
+                    }
+
+                };
+            });
+            return promise;
+        }
+
+        const promise = apiCall();
+        // promise 상태에 따라 작업을 진행
+        // api 호출에 성공했으면 then 아니면 catch
+
+        console.log(1);
+        console.log(2);
+        console.log(3);
+
+        // log는 동기식 함수이다
+        // promise의 then은 비동기함수
+        // 동기함수는 순차적으로 실행됨
+        // 비동기함수는 작업이 끝났을 때 실행됨
+        promise.then((response) => {
+            console.log(`API 성공 결과 : ${response}`);
+        })
+        .catch((status) =>{
+            console.log(`API 실패 결과 : ${status}`);
+
+        });
+
+        console.log(4);
+        console.log(5);
+
+        // 만약 api가 동기식 함수하면
+        // 서버가 응답할 때 까지 4, 5가 안나온다
+        // 즉 처리속도가 매우 느려진다. 
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        const func = function(){        
+            return new Promise((resoive, reject) => {
+                // 5초가 지나면 함수 실행됨
+                setTimeout(()=>{
+                    // 1번째는 성공, 2번째는 실패했을 때 사용함
+                    reject('fail...');
+                }, 5000);
+            });
+        }
+
+        // 아직 5초가 되지 않았기 때문에 작업이 끝나지 않음
+        // promise 객체의 현재상태는 pedding(대기)
+
+        // primise 상태가 fufilled가 되면 resolve함수가 호출되고
+        // 이어서 then함수가 실행됨
+        // 다시 체이닝 기법을 사용하여 catch함수를 호출
+        func().then((reponse)=>{
+            console.log(reponse);
+        }).catch((result)=>{
+            console.log(result);
+        })
+        
+/*        const func = function(){
+            // 매개변수로 resolve와 reject 함수를 선언
+            // promise를 처리할 때 사용
+            // promise는 작업의 처리 상태에 따라 진행이 되는데
+            // 진행을 싴밀때 resolve와 reject함수를 사용함
+            return new Promise((resoive, reject) => {
+                resoive(100);
+            });
+        }
+
+        // 작업 성공
+        // 작업에 성공했으면 이어서 then함수가 호출됨
+        func().then((rex) => {
+            console.log(rex);
+        })
+            */
+
+    </script>
+
+</body>
+</html>
