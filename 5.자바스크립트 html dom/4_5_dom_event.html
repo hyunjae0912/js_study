@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="KO">
+<head>
+    <style>
+        .menu {
+            display: flex;
+            list-style: none;
+            list-style: none;
+            height: 50px;
+            padding: 0;
+            margin: 0;
+            background-color: whitesmoke;
+            border-bottom: 2px solid lightgray;
+        }
+        /* 대메뉴 아이템 */
+        .menu-item {
+            width: 150px;
+            text-align: center;
+            background-color: lightgray;
+            padding: 10px 0;
+            font-weight: bold;
+
+            /* 대메뉴 아래 각 서브메뉴의 위치를 설정하기 위한 기준을 설정 */
+            position: relative;
+        }
+        .menu-item:hover {
+            background-color: gray;
+        }
+
+        .submenu{
+            
+            /* 서브메뉴는 메뉴의 바로 아래 붙이기 */
+            position: absolute;
+            top: 50px;
+            list-style: none;
+            width: 150px;
+            padding: 0;
+            border: 1px solid lightgray;
+            opacity: 0;
+            /* 애니메이션 효과 */
+            visibility: hidden;
+            max-height: 0;
+
+        }
+        /* 서브메뉴는 선택하기전가지 숨김선택 */
+
+        /* hover이벤트가 발생한 menu-item의 하위 요소 중에서
+        class-submenu 속성을 가지고 있는 요소를 선택 */
+        .menu-item:hover .submenu {
+            opacity: 1;
+            visibility: visible;
+            /* 애니메이션 효과 여기가중요************************************* */
+            /* 서브메뉴가 나타나는 효과를 1초동안 지연 */
+            transition: all 1s ease-out;
+
+            /* 틀은 자연스럽게 늘어나지만 글자는 고정되어있기 때문에 
+            그냥 천천히 나옴 */
+            overflow: hidden ;
+            max-height: 100px;
+            /* 그래서 overflow 속성을 사용해서 자식의 크기를 잘라야함 */
+        }
+
+        .submenu li {
+            border-bottom: 1px solid lightgray;
+            padding: 10px 0;
+        }
+
+        /* 서브메뉴의 아이템에서 마우스를 올리면 배경색 전환
+        이걸 js코드로 바꿔보기 */
+        .submenu li:hover {
+            background-color: whitesmoke;
+        }
+        /* 서브메뉴 스타일 */
+    </style>
+</head>
+<body>
+    
+    <!-- 서브메뉴가 나타날때 천천히 펼쳐지는 애니메이션 효과 -->
+    <ul class="menu">
+        <li class="menu-item">
+            대메뉴1
+            <ul class="submenu">
+                <li>서브메뉴 1-1</li>
+                <li>서브메뉴 1-2</li>
+            </ul>
+        </li>
+
+        <li class="menu-item">
+            대메뉴2
+            <ul class="submenu">
+                <li>서브메뉴 1-1</li>
+                <li>서브메뉴 1-2</li>
+            </ul>
+        </li>
+
+    </ul>
+
+
+
+    <script>
+        // sub meni 아래 있는 li태그에 hover 이벤트 설정
+        const submenuItems = document.querySelectorAll('.submenu li');
+        console.log(submenuItems, typeof submenuItems);
+
+        submenuItems.forEach((item) => {
+            item.addEventListener('mouseenter', () => {
+                item.style.background-color = 'whitesmoke';
+            });
+            console.log(item);
+        })
+
+
+    </script>
+</body>
+</html>

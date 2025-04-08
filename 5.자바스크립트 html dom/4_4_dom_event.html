@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    
+    <!-- html코드를 작성할 때 속성에 추가 -->
+    <button onclick="onClick()">클릭</button>
+    <button id="btn">클릭</button>
+
+    <select id="sel" onchange="onChange(event)">
+        <option value="KO">korea</option>
+        <option value="CH">china</option>
+        <option value="JP">japan</option>
+    </select>
+
+
+    <input type="text" onfocus="onFocus()" onblur="onBlur()">
+
+    <script>
+        function onClick(){
+            console.log('버튼을 클릭하셨습니다.');
+        }
+
+        // 문서가 만들어진 후에 이벤트리스너로 이벤트 등록
+        const button2 = document.getElementById('btn');
+
+        button2.addEventListener('click', () => {
+            alert('버튼을 클릭했습니다.');
+        });
+
+        // 선택된 값이 변경되었을 때 이벤트가 발생
+        function onChange(event){
+            console.log(event.target.value);
+        }
+
+        // 클릭했을때
+        function onFocus(){
+            console.log("onFocus");
+        }
+
+        // 클릭을 해제했을 때
+        function onBlur(){
+            console.log("onBlur");
+        }
+    </script>
+</body>
+</html>

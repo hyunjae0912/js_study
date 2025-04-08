@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    
+    <input type="text" oninput="func(event)" onkeydown="func(event)" onkeyup="func(event)">
+
+
+
+    <script>
+        // oninput : 입력 내용이 바뀌었을 때
+        // onkeydown: 키를 눌렀을 때
+        // onkeyup: 키를 눌렀다가 땠을 때
+
+        function func(e){
+            console.log(e.type, e.target, e.target.value);
+        }
+
+    </script>
+</body>
+</html> 

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+
+</head>
+<body>
+    
+    <input type="text" name="" id="userid">
+    <p>p태그1</p>
+    <p>p태그2</p>
+    <p class="para">p태그3</p>
+    <p class="para">p태그4</p>
+
+    <script>
+        // document 객체가 제공하는 함수를 사용하여 html요소 찾기
+        // 아이디를 사용해서 html 요소 찾기
+
+        // 중복이 불가하기 때문에 한 건만 가능
+        const userid = document.getElementById('userid');
+        console.log(userid);
+
+        // 같은 태그명을 가지고 있는 요소를 목록으로 반환
+        const p = document.getElementsByTagName('p');
+        console.log(p);
+
+        // 클래스로 html 요소 찾기
+        const para = document.getElementsByClassName('para');
+        console.log(para);
+
+        const pPara = document.querySelectorAll('p.para');
+        console.log(pPara);
+    </script>
+</body>
+</html>

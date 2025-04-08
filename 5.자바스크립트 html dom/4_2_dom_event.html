@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <input type="text" id="text" onkeydown="func()">
+
+
+    <script>
+
+        function func(){
+            const input = document.getElementById('text');
+            console.log(input.value);
+            console.log(window.event.key, window.event.keyCode);
+        }
+    </script>
+</body>
+</html>
