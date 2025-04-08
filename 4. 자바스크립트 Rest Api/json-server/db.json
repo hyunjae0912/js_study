@@ -1,0 +1,16 @@
+{
+  "boards": [
+    {
+      "id": 2,
+      "title": "2번글",
+      "writer": "또치"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "cotent": "1번 게시물의 추가",
+      "boardNo": 1
+    }
+  ]
+}

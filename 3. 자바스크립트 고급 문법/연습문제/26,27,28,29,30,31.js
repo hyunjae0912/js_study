@@ -26,6 +26,7 @@ console.log(result3);
 
 console.log();
 
+// + => 하나 이상 연속
 const str4 = "baanaaana";
 const regex4 = /a+/g;
 
@@ -46,6 +47,8 @@ console.log(result5);
 console.log();
 
 const str6 = "Hello, World! How are you today?";
+// 대문자를 모두 찾을려면 범위를 사용
+// 전역플래그를 사용해서 어쩌구저쩌구
 const regex6 = /[A-Z]/g;
 
 const result6 = str6.match(regex6);
