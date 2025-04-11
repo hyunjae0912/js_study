@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    
+    <!-- 세션스토리지에 저장된 데이터를 조회하는 화면 -->
+
+    msg:
+    <div id="msg"></div>
+
+    person:
+    <div>
+        <span id="name"></span>
+        <span id="age"></span>
+    </div>
+
+    <script>
+        // 스토리지에 저장된 msg를 꺼내서 화면에 표시
+
+        const msg = sessionStorage.getItem('message');
+        
+        const div = document.getElementById('msg');
+
+        div.textContent = msg;
+
+        const person = sessionStorage.getItem('person');
+        console.log(person);
+        
+        const obj = JSON.parse(person);
+
+        // span 태그 가져오기
+        const span1 = document.getElementById('name');
+        const span2 = document.getElementById('age');
+
+        span1.textContent = obj.name;
+        span2.textContent = obj.age;
+    </script>
+</body>
+</html>

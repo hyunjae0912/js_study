@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    
+    <!-- 브라우저에서 스토리지라는 저장소 사용하지 -->
+
+    <script>
+        // 스토리지 사용할 수 있는지 확인
+        console.log(typeof Stroage);
+
+        if(typeof Stroage != undefined){
+            // 스토리지 객체를 사용하여 저장소에 데이터를 저장
+            // 스토리지의 종류: 로컬/세션 스토리지
+            // setItem : 저장소에 데이터 추가  (key , value)
+            localStorage.setItem('hi', '안녕하세요');
+
+        }else{
+            console.log('스토리지 사용 불가');
+        }
+
+        const arr = [
+            { no:1, name:"짱구"},
+            { no:2, name:"철수"}
+        ];
+        // 바로 추가는 안되므로
+
+        const str = JSON.stringify(arr);
+        localStorage.setItem('person', str);
+    </script>
+</body>
+</html>
