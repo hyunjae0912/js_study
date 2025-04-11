@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        /* 미리 스타일 작성 */
+        .border-green {
+            border: 2px solid green;
+        }
+
+        .border-red {
+            border: 2px solid red
+        }
+        .background-yellow{
+            background-color: blue;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- dom 객체를 사용해서 html 요소의 스타일 바꾸기 -->
+
+    text:
+    <br>
+    <input type="text" id="text1" onblur="changeBorder()">
+    <br>
+
+    Radio (이벤트 수신):
+    <br>
+    <label for="email_y">동의</label>
+    <input type="radio" name="email" value="y" id="email_y" onclick="showEmail()">
+
+    <label for="email_n">거절</label>
+    <input type="radio" name="email" value="n" id="email_n" onclick="hideEmail()" checked>
+
+    <!-- 이메일 입력필드 -->
+    <div id="div-email" style="display: none;">
+        이메일 : <input type="text" id="input-email">
+    </div>
+    <br>
+
+    <select id="sel" onchange="onChange(this)">
+        <option value=""></option>
+        <option value="KO">Korea</option>
+        <option value="CN">China</option>
+        <option value="JP">Japan</option>
+    </select>
+
+    <!-- 첫 번째 박스에서 한국을 선택하기 전까지 숨김 -->
+    <select id="sel2">
+        <option value="서울">서울</option>
+        <option value="부산">부산</option>
+        <option value="대전">대전</option>
+        <option value="제주">제주</option>
+    </select>
+
+    <br>
+
+    <button onclick="onSave()">저장</button>
+
+
+
+    <script>
+        function changeBorder() {
+            // 입력 필드에 값이 입력되면 테두리색 변경
+            const input = document.getElementById('text1');
+            // 그리고 이벤트가 발생했을때 클래스 이름 추가
+            input.className = 'border-green'
+        }
+
+        // 동의 버튼을 클릭했을 때
+        function showEmail() {
+            const div = document.getElementById('div-email');
+            div.style.display = '';
+        }
+
+        // 거부 버튼을 클릭했을 때
+        function hideEmail() {
+            const div = document.getElementById('div-email');
+            div.style.display = 'none';
+        }
+
+        // 셀렉트 박스가 옵션을 편경했을 때
+        function onChange(obj) {
+            const option = obj.value;
+            console.log(option);
+            const select2 = document.getElementById('sel2');
+
+            if (option == 'KO') {
+                select2.style.display = '';
+            }
+            else {
+                select2.style.display = 'none';
+            }
+
+        }
+
+
+        // 저장버튼을 클릭했을 때 입력필드를 검사
+        // 입력된 값이 없으면 테두리를 red로 변경
+        // 있으면 테두리를 원래대로 변경
+        function onSave() {
+            // 사용자가 입력한 값이 있으면 green
+            // 없으면 red로 변경
+            const input = document.getElementById('text1');
+            const text = input.value;
+
+            if(text == ''){
+                // 필드에 클래스를 추가하는 방법
+                // 1. className 속성에 바로 대입
+                input.classList.add('border-red');
+                input.classList.add('background-yellow');
+
+
+                // 이걸로 하면 기존값이 제거됨
+                // 그래서 하나만 할때 사용
+                // input.className = 'border-red';
+                // input.className = 'background-yellow';
+            }
+            else{
+                input.classList.remove('border-red');
+                input.className = 'border-green';
+            }
+            console.log(input.classList);
+        }
+    </script>
+
+</body>
+
+</html>

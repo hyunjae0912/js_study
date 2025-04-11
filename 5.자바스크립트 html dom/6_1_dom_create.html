@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        .highlight {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p id="text">p태그 </p>
+    <button id="btn1" onclick="onClick()">Toggle HighLight</button>
+    <button id="btn2" onclick="doRemove()">Remove Text</button>
+
+    <script>
+        const newSpan = document.createElement('span');
+        newSpan.textContent = '새로운 span 태그';
+
+        const p = document.getElementById('text');
+        p.appendChild(newSpan);
+
+        newSpan.classList.add('highlight');
+
+        // function onClick(){
+        //     newSpan.classList.toggle('highlight'); 
+        // }
+
+        const btn = document.getElementById("btn1");
+        
+        btn.addEventListener('click', () => {
+            newSpan.classList.toggle('highlight');
+            
+            // span 태그에 hightlight 클래스가 있는지 확인
+            if(newSpan.classList.contains('highlight')){
+                console.log('강조됨');
+            }
+            else{
+                console.log('강조안됨');
+            }
+        });
+
+        function doRemove(){
+            newSpan.remove();   
+        }
+
+    </script>
+</body>
+</html>

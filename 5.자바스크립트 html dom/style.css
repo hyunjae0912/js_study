@@ -1,0 +1,115 @@
+/* 바디 스타일 */
+/* container를 가운데 정렬 */
+body {
+    display: flex;
+    /* 교차축(x축)을 기준으로 자식들을 가운데 정렬 */
+    align-items: center;
+    /* y축으로 정렬 */
+    flex-direction: column;
+}
+
+/* 타이틀 */
+h2{
+    margin-bottom: 20px;
+}
+
+#todo-div{
+    display: flex;
+}
+
+/* 입력필드 */
+#todo-input{
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    padding: 0 10px;
+    /* 남은 여백이 발생하면 입력필드가 차지 */
+    flex-grow: 1;
+}
+
+#add-btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+    margin-left: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#add-btn:hover{
+    background-color: #b0b0b0;
+}
+
+#todo-list{
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#todo-list li {
+    font-size: 1.2rem;
+    padding: 5px 0;
+    border-bottom: 1px solid #f2f2f2;
+    /* 자식 요소들을 정렬하기 위해서
+    flex 컨테이너로 설정 */
+    display: flex;
+}
+
+#todo-count {
+    margin-bottom: 20px;
+}
+
+/* 삭제 버튼 */
+#delete-all-btn{
+    width: 100px;
+    height: 20px;
+    background-color: #d3d3d3;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+#delete-all-btn:hover {
+    background-color: #b0b0b0;
+}
+
+/* 체크 박스 스타일 - 토글 이벤트 */
+.complete * {
+    color: rgb(155, 155, 155);
+    text-decoration: line-through;
+}
+
+/* li 태그 안에 제크박스 */
+li input[type='checkBox'] {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border: 2px solid black;
+}
+
+
+/* li태그 안에 입력 필드 */
+li input[type='text']{
+    width: 200px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+/* li 태그 안에 있는 버튼 */
+li button {
+    width: 50px;
+    height: 30px;
+    margin-left: 10px;
+    background-color: #d3d3d3;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+li button:hover {
+    background-color: #b0b0b0;
+}

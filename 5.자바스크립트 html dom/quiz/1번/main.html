@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./1style.css">
+</head> 
+<body>
+    <div>
+        <h1>프론트엔드 개발 지원서</h1>
+        <p>html, Css, javaScript 대한 기술직 이해과 경험이 있는 분을 찾습니다.</p>
+        <hr>    
+
+        <p>개인정보</p>
+        <ul>
+            <li>이름
+                <input type="text" id="name">
+            </li>
+            <li>연락처
+                <input type="text" id="number" onblur="onlyNum(this)">
+            </li>
+        </ul>
+        <p>지원분야</p>
+        <ul>
+            <li>
+                <input type="radio" name="major" id="major_1" value="y" checked>
+                <label for="major_1">웹 퍼블레싱</label>
+            </li>
+            <li>    
+                <input type="radio" name="major" id="major_2" value="y">
+                <label for="major_2">웹 에플리케이션 개발</label>
+            </li>
+            <li>
+                <input type="radio" name="major" id="major_3" value="y">
+                <label for="major_3">개발 환경 개선</label>
+            </li>
+        </ul>
+
+        <p>지원동기</p>
+        <textarea ></textarea>
+        <span>0</span>/30자
+        <br>
+
+        <button onclick="checkSubmit()">접수하기</button>
+        <button onclick="clearform()">다시쓰기</button>
+    </div>
+
+    <script src="./1scritp.js" defer></script>
+</body>
+</html>

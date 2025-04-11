@@ -1,0 +1,9 @@
+li{
+    list-style: none;
+}
+
+td, tr{
+    text-align: center;
+    border: 1px solid black;
+    width: 150px;
+}

@@ -67,9 +67,9 @@
 
         /* 서브메뉴의 아이템에서 마우스를 올리면 배경색 전환
         이걸 js코드로 바꿔보기 */
-        .submenu li:hover {
+        /* .submenu li:hover {
             background-color: whitesmoke;
-        }
+        } */
         /* 서브메뉴 스타일 */
     </style>
 </head>
@@ -103,9 +103,6 @@
         console.log(submenuItems, typeof submenuItems);
 
         submenuItems.forEach((item) => {
-            item.addEventListener('mouseenter', () => {
-                item.style.background-color = 'whitesmoke';
-            });
             console.log(item);
         })
 

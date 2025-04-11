@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./2style.css">
+</head>
+
+<body>
+    <h1>회원가입</h1>
+    <p>회원가입을 위해 아래의 정보를 입력해주세요.</p>
+    <hr>
+
+    <p>회원정보</p>
+    <ul>
+        <li>
+            아이디
+            <input type="text" onblur="checkId(this)" placeholder="4-8자 소문자 숫자">
+        </li>
+        <li>
+            비밀번호
+            <input type="password" name="" id="pass1">
+        </li>
+        <li>
+            비밀번호 확인
+            <input type="password" name="" id="pass2">
+        </li>
+        <li>
+            이름
+            <input type="text" name="" id="">
+        </li>
+        <li>
+            성별
+            <input type="radio" name="gender" id="man" value="y">
+            <label for="man">남자</label>
+            <input type="radio" name="gender" id="woman" value="y">
+            <label for="woman">여자</label>
+        </li>
+    </ul>
+    <button>회원가입</button>
+    <button>다시쓰기</button>
+
+    <h1>회원정보 목록</h1>
+    아래는 회원표입니다.
+    <hr>
+    <table>
+        <thead>
+            <td>아이디</td>
+            <td>이름</td>
+            <td>성별</td>
+        </thead>
+
+        <!-- 뭐 이런식으로 추가하기  -->
+        <tbody>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tbody>
+    </table>
+
+    <script src="./2script.js"></script>
+</body>
+</html>
